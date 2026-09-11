@@ -323,7 +323,11 @@
         }
 
         .approval-list {
+            display: block;
+            margin-top: 4px;
             font-size: 12px;
+            line-height: 1.5;
+            white-space: pre-line;
             color: #333;
         }
 
@@ -873,9 +877,9 @@
             document.getElementById('managerApproval').textContent = managerApproved.length;
 
             document.getElementById('directorApprovalList').textContent =
-                directorApproved.length > 0 ? ' (' + directorApproved.map(p => p.name).join(', ') + ')' : '';
+                directorApproved.length > 0 ? directorApproved.map(p => p.name).join('\n') : '';
             document.getElementById('managerApprovalList').textContent =
-                managerApproved.length > 0 ? ' (' + managerApproved.map(p => p.name).join(', ') + ')' : '';
+                managerApproved.length > 0 ? managerApproved.map(p => p.name).join('\n') : '';
         }
 
         // 編集モーダルを開く
